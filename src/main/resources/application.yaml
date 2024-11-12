@@ -1,0 +1,25 @@
+server:
+#  port mặc định là 8080
+  port: 8080
+  servlet:
+#     Context Path là đoạn URL đứng ngay sau domain và trước phần định danh các tài nguyên khác
+#    ví dụ: localhost:8080/identity
+      context-path: /identity
+
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost:3306/identity_service"
+    username: "root"
+    password: "root"
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+    jwt:
+      signerKey: "$2a$12$cMcyEQRLRd1.MMkVvs3TnOucZFA8.caB029D5tLD8s2z8lOMiXAY."
+
+logging:
+  level:
+    org.springframework.security: DEBUG
